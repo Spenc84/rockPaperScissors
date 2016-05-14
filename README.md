@@ -1,1 +1,2 @@
-rock-paper-scissors application for Axxess
+Basic: Rock Paper Scissors
+Advanced: Rock Paper Scissors Lizard Spock
