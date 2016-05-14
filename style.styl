@@ -1,0 +1,118 @@
+// Function to center items in a row or column
+center(direction)
+  if direction == r
+    display flex
+    justify-content center
+    align-items center
+  else if direction == c
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+
+// Color Variables
+color1 = #2C2B3F
+color2 = #DBDBDB
+
+// Global styling //////////////////
+html, body
+  width 100vw
+  height 100vh
+  box-sizing border-box
+////////////////////////////////////
+
+/////  Message styling /////////////
+div.message
+  position absolute
+  left 0
+  width 100%
+  margin-top 3em
+  text-align center
+  h3
+    display inline-block
+    padding .5em
+    background-color white
+    border 1px solid black
+    border-radius 15px
+
+/////  HEADER  /////////////////////
+header
+  height 10%
+  color white
+  background-color color1
+  center(r)
+  div.img
+    display flex
+    align-items center
+    height 100%
+    margin 0 3em
+  img
+    height 90%
+  div.row
+    center(r)
+    input
+      padding 3px 6px
+      font-size 16px
+    button
+      padding 3px 6px
+      margin-left 1em
+////////////////////////////////////
+
+/////  MAIN  ///////////////////////
+main
+  height 80%
+  background-color color2
+  center(r)
+  section
+    height 100%
+    width 50%
+    display flex
+    flex-direction column
+    h2
+      text-align center
+    &:first-child
+      border-right 1px solid black
+      img
+        cursor pointer
+      div.row div.col:last-child
+        align-items center
+        justify-content center
+        img
+          width 80%
+          cursor default
+    &:last-child
+      div.row div.col:first-child
+        align-items center
+        justify-content center
+        img
+          width 80%
+
+    div.row
+      height 100%
+      center(r)
+      div.col
+        height 100%
+        width 50%
+        display flex
+        flex-direction column
+        justify-content space-around
+        div.row
+          center(c)
+          img
+            height 100px
+            margin-bottom 1em
+////////////////////////////////////
+
+/////  FOOTER  /////////////////////
+footer
+  color white
+  height 10%
+  background-color color1
+  center(r)
+  div.col
+    center(c)
+    line-height 10px
+    margin 0 1em
+    input
+      margin 0 1em
+////////////////////////////////////

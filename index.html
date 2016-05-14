@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="rockPaperScissors">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>rockPaperScissors</title>
+</head>
+<body ng-controller="baseCtrl">
+  <!-- HEADER -->
+  <!-- Timer display and controls -->
+  <header>
+    <div class="img"><img src="./images/logo.png" alt="logo"></div>
+
+    <div class="row">
+      <div class="col">
+        Min<br/>
+        <input ng-model="minutes" type="number" min="0" max="60" autofocus>
+      </div>
+      <div class="col">
+        Sec<br/>
+        <input ng-model="seconds" type="number" maxlength="2" min="0" max="59">
+      </div>
+      <div class="col">
+        <br/>
+        <button ng-click="play()" ng-if="!playing"><i class="material-icons">play_arrow</i></button>
+        <button ng-click="pause()" ng-if="playing"><i class="material-icons">pause</i></button>
+        <button ng-click="restart()"><i class="material-icons">replay</i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- USER'S SIDE -->
+    <section>
+      <h2>You</h2>
+      <div class="row">
+        <!-- USER OPTIONS -->
+        <div class="col">
+          <div class="row">
+            <span>Rock</span>
+            <img ng-click="throw(3)" src="./images/Rock1.png" alt="Rock">
+          </div>
+          <div class="row">
+            <span>Scissors</span>
+            <img ng-click="throw(2)" src="./images/Scissors1.png" alt="Scissors">
+          </div>
+          <div class="row">
+            <span>Paper</span>
+            <img ng-click="throw(1)" src="./images/Paper1.png" alt="Paper">
+          </div>
+        </div>
+        <!-- USER'S SELECTION -->
+        <div class="col">
+          <img ng-src="{{userSelection}}">
+        </div>
+      </div>
+    </section>
+    <!-- COMPUTER'S SIDE -->
+    <section>
+      <h2>Computer</h2>
+      <div class="row">
+        <!-- COMPUTER'S SELECTION -->
+        <div class="col">
+          <img ng-src="{{compSelection}}">
+        </div>
+        <!-- COMPUTER'S OPTIONS -->
+        <div class="col">
+            <div class="row">
+              <span>Rock</span>
+              <img src="./images/Rock2.png" alt="Rock">
+            </div>
+            <div class="row">
+              <span>Scissors</span>
+              <img src="./images/Scissors2.png" alt="Scissors">
+            </div>
+            <div class="row">
+              <span>Paper</span>
+              <img src="./images/Paper2.png" alt="Paper">
+            </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <!-- Score Tracker -->
+  <footer>
+      <div class="col">
+        <b>Won</b><br/>
+        {{won}}
+      </div>
+      <div class="col">
+        <b>Tied</b><br/>
+        {{tied}}
+      </div>
+      <div class="col">
+        <b>Lost</b><br/>
+        {{lost}}
+      </div>
+  </footer>
+
+
+  <!-- Javescript files for our Angular App -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+  <script src="./angular/app.js"></script>
+  <script src="./angular/baseCtrl.js"></script>
+</body>
+</html>
