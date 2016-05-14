@@ -2,6 +2,7 @@
 <html lang="en" ng-app="rockPaperScissors">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>rockPaperScissors</title>
@@ -34,7 +35,6 @@
   <main>
     <!-- USER'S SIDE -->
     <section>
-      <h2>You</h2>
       <div class="row">
         <!-- USER OPTIONS -->
         <div class="col">
@@ -43,26 +43,35 @@
             <img ng-click="throw(3)" src="./images/Rock1.png" alt="Rock">
           </div>
           <div class="row">
+            <span>Paper</span>
+            <img ng-click="throw(1)" src="./images/Paper1.png" alt="Paper">
+          </div>
+          <div class="row">
             <span>Scissors</span>
             <img ng-click="throw(2)" src="./images/Scissors1.png" alt="Scissors">
           </div>
-          <div class="row">
-            <span>Paper</span>
-            <img ng-click="throw(1)" src="./images/Paper1.png" alt="Paper">
+          <div ng-if="advanced" class="row">
+            <span>Lizard</span>
+            <img ng-click="throw(2)" src="./images/Lizard1.png" alt="Lizard">
+          </div>
+          <div ng-if="advanced" class="row">
+            <span>Spock</span>
+            <img ng-click="throw(2)" src="./images/Spock1.png" alt="Spock">
           </div>
         </div>
         <!-- USER'S SELECTION -->
         <div class="col">
+          <h2>You</h2>
           <img ng-src="{{userSelection}}">
         </div>
       </div>
     </section>
     <!-- COMPUTER'S SIDE -->
     <section>
-      <h2>Computer</h2>
       <div class="row">
         <!-- COMPUTER'S SELECTION -->
         <div class="col">
+          <h2>Bot</h2>
           <img ng-src="{{compSelection}}">
         </div>
         <!-- COMPUTER'S OPTIONS -->
@@ -72,12 +81,20 @@
               <img src="./images/Rock2.png" alt="Rock">
             </div>
             <div class="row">
+              <span>Paper</span>
+              <img src="./images/Paper2.png" alt="Paper">
+            </div>
+            <div class="row">
               <span>Scissors</span>
               <img src="./images/Scissors2.png" alt="Scissors">
             </div>
-            <div class="row">
-              <span>Paper</span>
-              <img src="./images/Paper2.png" alt="Paper">
+            <div ng-if="advanced" class="row">
+              <span>Lizard</span>
+              <img src="./images/Lizard2.png" alt="Lizard">
+            </div>
+            <div ng-if="advanced" class="row">
+              <span>Spock</span>
+              <img src="./images/Spock2.png" alt="Spock">
             </div>
         </div>
       </div>
@@ -104,7 +121,7 @@
 
   <!-- Javescript files for our Angular App -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
-  <script src="./angular/app.js"></script>
-  <script src="./angular/baseCtrl.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/baseCtrl.js"></script>
 </body>
 </html>

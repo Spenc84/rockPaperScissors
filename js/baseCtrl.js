@@ -9,6 +9,7 @@ angular.module('rockPaperScissors')
     $scope.tied = 0;
     $scope.lost = 0;
     $scope.playing = false;
+    $scope.advanced = false;
     $interval.cancel(tock);
     $scope.userSelection = "./images/blank.png";
     $scope.compSelection = "./images/blank.png";
