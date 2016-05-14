@@ -40,23 +40,23 @@
         <div class="col">
           <div class="row">
             <span>Rock</span>
-            <img ng-click="throw(3)" src="./images/Rock1.png" alt="Rock">
+            <img ng-click="throw(1)" src="./images/Rock1.png" alt="Rock">
           </div>
           <div class="row">
             <span>Paper</span>
-            <img ng-click="throw(1)" src="./images/Paper1.png" alt="Paper">
+            <img ng-click="throw(2)" src="./images/Paper1.png" alt="Paper">
           </div>
           <div class="row">
             <span>Scissors</span>
-            <img ng-click="throw(2)" src="./images/Scissors1.png" alt="Scissors">
+            <img ng-click="throw(3)" src="./images/Scissors1.png" alt="Scissors">
           </div>
-          <div ng-if="advanced" class="row">
+          <div ng-if="theory" class="row">
             <span>Lizard</span>
-            <img ng-click="throw(2)" src="./images/Lizard1.png" alt="Lizard">
+            <img ng-click="throw(4)" src="./images/Lizard1.png" alt="Lizard">
           </div>
-          <div ng-if="advanced" class="row">
+          <div ng-if="theory" class="row">
             <span>Spock</span>
-            <img ng-click="throw(2)" src="./images/Spock1.png" alt="Spock">
+            <img ng-click="throw(5)" src="./images/Spock1.png" alt="Spock">
           </div>
         </div>
         <!-- USER'S SELECTION -->
@@ -88,11 +88,11 @@
               <span>Scissors</span>
               <img src="./images/Scissors2.png" alt="Scissors">
             </div>
-            <div ng-if="advanced" class="row">
+            <div ng-if="theory" class="row">
               <span>Lizard</span>
               <img src="./images/Lizard2.png" alt="Lizard">
             </div>
-            <div ng-if="advanced" class="row">
+            <div ng-if="theory" class="row">
               <span>Spock</span>
               <img src="./images/Spock2.png" alt="Spock">
             </div>
@@ -115,6 +115,12 @@
       <div class="col">
         <b>Lost</b><br/>
         {{lost}}
+      </div>
+      <div class="col">
+        <select ng-model="theory" id="theory">
+          <option value="" selected>Basic</option>
+          <option value="TRUE">Theory</option>
+        </select>
       </div>
   </footer>
 

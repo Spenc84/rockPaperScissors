@@ -124,3 +124,8 @@ footer div.col {
 footer div.col input {
   margin: 0 1em;
 }
+footer div.col:last-child {
+  position: absolute;
+  right: 1%;
+  bottom: 3.5%;
+}

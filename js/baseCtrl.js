@@ -9,7 +9,6 @@ angular.module('rockPaperScissors')
     $scope.tied = 0;
     $scope.lost = 0;
     $scope.playing = false;
-    $scope.advanced = false;
     $interval.cancel(tock);
     $scope.userSelection = "./images/blank.png";
     $scope.compSelection = "./images/blank.png";
@@ -47,25 +46,37 @@ angular.module('rockPaperScissors')
 
   $scope.throw = function(choice){
     if($scope.playing){
-      if(choice === 1) $scope.userSelection = "./images/paper1.png";
-      else if(choice === 2) $scope.userSelection = "./images/scissors1.png";
-      else $scope.userSelection = "./images/rock1.png";
+      switch(choice){
+        case 1: $scope.userSelection = "./images/rock1.png"; break;
+        case 2: $scope.userSelection = "./images/paper1.png"; break;
+        case 3: $scope.userSelection = "./images/scissors1.png"; break;
+        case 4: $scope.userSelection = "./images/lizard1.png"; break;
+        case 5: $scope.userSelection = "./images/spock1.png"; break;
+      }
 
-      var comp = Math.ceil(Math.random()*3);
+      var comp = $scope.theory ? Math.ceil(Math.random()*5) : Math.ceil(Math.random()*3);
 
-      if(comp === 1) $scope.compSelection = "./images/paper2.png";
-      else if(comp === 2) $scope.compSelection = "./images/scissors2.png";
-      else $scope.compSelection = "./images/rock2.png";
+      switch(comp){
+        case 1: $scope.compSelection = "./images/rock2.png"; break;
+        case 2: $scope.compSelection = "./images/paper2.png"; break;
+        case 3: $scope.compSelection = "./images/scissors2.png"; break;
+        case 4: $scope.compSelection = "./images/lizard2.png"; break;
+        case 5: $scope.compSelection = "./images/spock2.png"; break;
+      }
 
 
       if(choice === comp) $scope.tied++;
       else switch(choice){
         case 1:
-          (comp === 3) ? $scope.won++ : $scope.lost++; break;
+          (comp === 3 || comp === 4) ? $scope.won++ : $scope.lost++; break;
         case 2:
-          (comp === 1) ? $scope.won++ : $scope.lost++; break;
+          (comp === 1 || comp === 5) ? $scope.won++ : $scope.lost++; break;
         case 3:
-          (comp === 2) ? $scope.won++ : $scope.lost++; break;
+          (comp === 2 || comp === 4) ? $scope.won++ : $scope.lost++; break;
+        case 4:
+          (comp === 2 || comp === 5) ? $scope.won++ : $scope.lost++; break;
+        case 5:
+          (comp === 1 || comp === 3) ? $scope.won++ : $scope.lost++; break;
       }
     }
   };
