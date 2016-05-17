@@ -47,21 +47,21 @@ angular.module('rockPaperScissors')
   $scope.throw = function(choice){
     if($scope.playing){
       switch(choice){
-        case 1: $scope.userSelection = "/./images/rock1.png"; break;
-        case 2: $scope.userSelection = "/./images/paper1.png"; break;
-        case 3: $scope.userSelection = "/./images/scissors1.png"; break;
-        case 4: $scope.userSelection = "/./images/lizard1.png"; break;
-        case 5: $scope.userSelection = "/./images/spock1.png"; break;
+        case 1: $scope.userSelection = "/./images/Rock1.png"; break;
+        case 2: $scope.userSelection = "/./images/Paper1.png"; break;
+        case 3: $scope.userSelection = "/./images/Scissors1.png"; break;
+        case 4: $scope.userSelection = "/./images/Lizard1.png"; break;
+        case 5: $scope.userSelection = "/./images/Spock1.png"; break;
       }
 
       var comp = $scope.theory ? Math.ceil(Math.random()*5) : Math.ceil(Math.random()*3);
 
       switch(comp){
-        case 1: $scope.compSelection = "/./images/rock2.png"; break;
-        case 2: $scope.compSelection = "/./images/paper2.png"; break;
-        case 3: $scope.compSelection = "/./images/scissors2.png"; break;
-        case 4: $scope.compSelection = "/./images/lizard2.png"; break;
-        case 5: $scope.compSelection = "/./images/spock2.png"; break;
+        case 1: $scope.compSelection = "/./images/Rock2.png"; break;
+        case 2: $scope.compSelection = "/./images/Paper2.png"; break;
+        case 3: $scope.compSelection = "/./images/Scissors2.png"; break;
+        case 4: $scope.compSelection = "/./images/Lizard2.png"; break;
+        case 5: $scope.compSelection = "/./images/Spock2.png"; break;
       }
 
 
